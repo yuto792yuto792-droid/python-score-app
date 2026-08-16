@@ -1,15 +1,23 @@
-score1 = int(input("1科目目の点数: "))
-score2 = int(input("2科目目の点数: "))
-score3 = int(input("3科目目の点数: "))
+scores = []
 
-if 0 <= score1 <= 100 and 0 <= score2 <= 100 and 0 <= score3 <= 100:
-    average = (score1 + score2 + score3) / 3
+while True:
+    score = input("点数を入力してください（終了する場合は q）: ")
 
-    print(f"平均点は{average:.1f}点です")
+    if score == "q":
+        break
 
-    if average >= 60:
-        print("合格です")
+    score = int(score)
+
+    if 0 <= score <= 100:
+        scores.append(score)
     else:
-        print("不合格です")
+        print("点数は0〜100の範囲で入力してください")
+
+average = sum(scores) / len(scores)
+
+print(f"平均点は{average:.1f}点です")
+
+if average >= 60:
+    print("合格です")
 else:
-    print("点数は0〜100の範囲で入力してください")
+    print("不合格です")
