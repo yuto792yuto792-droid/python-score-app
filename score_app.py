@@ -16,7 +16,8 @@ while True:
 average = sum(scores) / len(scores)
 
 print(f"平均点は{average:.1f}点です")
-
+print(f"最高点は{max(scores)}点です")
+print(f"最低点は{min(scores)}点です")
 if average >= 60:
     print("合格です")
 else:
