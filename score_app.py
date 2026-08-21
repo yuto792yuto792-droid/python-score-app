@@ -6,7 +6,11 @@ while True:
     if score == "q":
         break
 
-    score = int(score)
+    try:
+        score = int(score)
+    except ValueError:
+        print("数字を入力してください")
+        continue
 
     if 0 <= score <= 100:
         scores.append(score)
