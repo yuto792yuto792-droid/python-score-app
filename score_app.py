@@ -17,6 +17,10 @@ while True:
     else:
         print("点数は0〜100の範囲で入力してください")
 
+if len(scores) == 0:
+    print("点数が入力されていません")
+    exit()
+
 average = sum(scores) / len(scores)
 
 print(f"平均点は{average:.1f}点です")
