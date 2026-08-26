@@ -1,22 +1,10 @@
 scores = []
 
-while True:
-    score = input("点数を入力してください（終了する場合は q）: ")
-
-    if score == "q":
-        break
-
-    try:
-        score = int(score)
-    except ValueError:
-        print("数字を入力してください")
-        continue
-
-    if 0 <= score <= 100:
+with open("scores.csv", "r", encoding="utf-8") as file:
+    for line in file:
+        score = int(line.strip())
         scores.append(score)
-    else:
-        print("点数は0〜100の範囲で入力してください")
-
+        
 if len(scores) == 0:
     print("点数が入力されていません")
     exit()
