@@ -2,8 +2,11 @@ scores = []
 
 with open("scores.csv", "r", encoding="utf-8") as file:
     for line in file:
-        score = int(line.strip())
-        scores.append(score)
+        try:
+            score = int(line.strip())
+            scores.append(score)
+        except ValueError:
+            print(f"無効なデータをスキップしました: {line.strip()}")
         
 if len(scores) == 0:
     print("点数が入力されていません")
