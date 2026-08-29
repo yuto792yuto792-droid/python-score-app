@@ -4,7 +4,12 @@ with open("scores.csv", "r", encoding="utf-8") as file:
     for line in file:
         try:
             score = int(line.strip())
-            scores.append(score)
+
+            if 0 <= score <= 100:
+                scores.append(score)
+            else:
+                print(f"範囲外の点数をスキップしました: {score}")
+
         except ValueError:
             print(f"無効なデータをスキップしました: {line.strip()}")
         
