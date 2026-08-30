@@ -23,6 +23,12 @@ print(f"平均点は{average:.1f}点です")
 print(f"最高点は{max(scores)}点です")
 print(f"最低点は{min(scores)}点です")
 if average >= 60:
-    print("合格です")
+    result = "合格"
 else:
-    print("不合格です")
+    result = "不合格"
+
+print(f"{result}です")
+
+with open("result.csv", "w", encoding="utf-8") as file:
+    file.write("平均点,最高点,最低点,判定\n")
+    file.write(f"{average:.1f},{max(scores)},{min(scores)},{result}\n")
