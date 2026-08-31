@@ -1,3 +1,10 @@
+def calculate_stats(scores):
+    average = sum(scores) / len(scores)
+    highest = max(scores)
+    lowest = min(scores)
+
+    return average, highest, lowest
+
 scores = []
 
 with open("scores.csv", "r", encoding="utf-8") as file:
@@ -17,11 +24,12 @@ if len(scores) == 0:
     print("点数が入力されていません")
     exit()
 
-average = sum(scores) / len(scores)
+average, highest, lowest = calculate_stats(scores)
 
 print(f"平均点は{average:.1f}点です")
-print(f"最高点は{max(scores)}点です")
-print(f"最低点は{min(scores)}点です")
+print(f"最高点は{highest}点です")
+print(f"最低点は{lowest}点です")
+
 if average >= 60:
     result = "合格"
 else:
