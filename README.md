@@ -16,3 +16,16 @@
 
 ```bash
 python score_app.py
+## Tech Stack
+
+- Python 3.13
+- pytest
+- Git / GitHub
+- GitHub Actions
+
+## Testing
+
+テストは以下のコマンドで実行できます。
+
+```bash
+python -m pytest
